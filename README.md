@@ -70,6 +70,8 @@
 
 > **Рекомендация:** *При форматировании флешки в файловую систему **EXT4** рекомендуется [создать раздел **SWAP**](https://youtu.be/lN3_Uk3CtZ0) (обязательно первым) объемом 512 МБ — 1 ГБ. Это важно даже на роутерах с 512 МБ встроенной RAM, поскольку на устройствах могут быть установлены дополнительные приложения, потребляющие ресурсы. Keenetic корректно работает с **SWAP**, активируя его только при использовании 95% оперативной памяти, что помогает избежать проблем с производительностью.*
 
+https://support.keenetic.ru/eaeu/ultra/kn-1811/ru/20978-preparing-a-usb-drive-as-storage-and-activating-a-swap-partition.html
+
 <br>
 
   <a href="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Paragon-Partition-Manager-Free-Light.png" target="_blank" rel="noopener noreferrer">
