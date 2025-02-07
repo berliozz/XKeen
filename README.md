@@ -1084,6 +1084,17 @@ chmod +x install_xray.sh
 ./install_xray.sh recover
 ```
 
+<br>
+
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+    </picture>
+</p>
+
+<br>
+
 **Команды**
 
 `./install_xray.sh {command}`
