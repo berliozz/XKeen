@@ -1076,7 +1076,16 @@ chmod +x install_xray.sh
 
 <br>
 
-> *После обновления Xray для корректной работы XKeen необходимо удалить файл **transport.json** из директории **opkg\etc\xray\configs** и добавить строку в верхнюю часть файла **05_routing**: `"domainStrategy": "IPIfNonMatch",`*
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+    </picture>
+</p>
+
+<br>
+
+> *После обновления Xray для корректной работы XKeen необходимо удалить файл **transport.json** из директории **opkg\etc\xray\configs** и добавить строку в верхнюю часть файла **05_routing.json**: `"domainStrategy": "IPIfNonMatch",`*
 
 <p align="left">
     <picture>
@@ -1096,16 +1105,6 @@ chmod +x install_xray.sh
 ```
 
 <br>
-
-<p align="left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
-    </picture>
-</p>
-
-<br>
-
 
 **Команды**
 
