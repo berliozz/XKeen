@@ -885,7 +885,7 @@ xkeen -start
 **DNS-over-HTTPS**
 * Quad9 DoH: `https://dns.quad9.net/dns-query`
 * CloudFlare DoH: `https://cloudflare-dns.com/dns-query`; `https://one.one.one.one/dns-query`
-* Google DoH `https://dns.google/dns-query`
+* Google DoH: `https://dns.google/dns-query`
 
 <p align="center">
   <a href="http://192.168.1.1/internet-filter/dns-configuration" target="_blank" rel="noopener noreferrer">
