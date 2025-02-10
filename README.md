@@ -8,6 +8,7 @@
 - [Настройка Xray](#настройка-xray)
 - [XKeen Config Generator](#как-использовать-генератор-конфига)
 - [Настройка DNS-over-TLS и DNS-over-HTTPS](#прокси-серверы-dns-over-tls-и-dns-over-https-для-шифрования-dns-запросов)
+- [FAQ по XKeen](#faq-по-xkeen-от-jameszero)
 
 <details>
 <summary>Опциональные настройки</summary>
