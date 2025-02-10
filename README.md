@@ -337,7 +337,7 @@ sudo $(brew --prefix e2fsprogs)/sbin/e2label /dev/disk14 OPKG
 
 <br>
 
-8. Скачайте терминальную программу [Putty](https://www.putty.org/) для работы с протоколами SSH и Telnet.
+8. Скачайте терминальную программу [Putty](https://www.putty.org/) или [Termius](https://termius.com/download) для работы с протоколами SSH и Telnet.
 
 9. Запустите Putty, выберите тип подключения **SSH**, впишите **IP-адрес** роутера в домашнем сегменте Home (по умолчанию 192.168.1.1), укажите **22**-й порт и нажмите кнопку Open.
 
