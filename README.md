@@ -1097,7 +1097,7 @@ chmod +x install_xray.sh
 
 <br>
 
-> *После обновления Xray для корректной работы XKeen необходимо удалить файл **transport.json** из директории **opkg\etc\xray\configs** и добавить строку в верхнюю часть файла **05_routing.json**: `"domainStrategy": "IPIfNonMatch",`*
+> *После обновления Xray для корректной работы XKeen необходимо удалить файл **02_transport.json** из директории **opkg\etc\xray\configs** и добавить строку в верхнюю часть файла **05_routing.json**: `"domainStrategy": "IPIfNonMatch",`*
 
 <p align="left">
     <picture>
