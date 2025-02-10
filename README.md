@@ -877,7 +877,7 @@ xkeen -start
 
 ### [Прокси-серверы DNS-over-TLS и DNS-over-HTTPS для шифрования DNS-запросов](https://telegra.ph/DoT-DoH-08-12)
 
-* Quad9 DoH: `9.9.9.9` `dns.quad9.net`; `149.112.112.112` `dns.quad9.net`
+* Quad9 DoT: `9.9.9.9` `dns.quad9.net`; `149.112.112.112` `dns.quad9.net`
 * Quad9 DoH: `https://dns.quad9.net/dns-query`
 * Google DoH `https://dns.google/dns-query`
 
