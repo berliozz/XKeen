@@ -1066,6 +1066,20 @@ exec /opt/etc/init.d/S51dropbear restart
 
 ### Обновление ядра XRAY до последней версии
 
+> *Перед обновлением Xray для обеспечения корректной работы XKeen необходимо удалить файл **02_transport.json** из директории **opkg\etc\xray\configs**. После этого добавьте в верхнюю часть файла **05_routing.json** следующую строку:*
+> ```
+> "domainStrategy": "IPIfNonMatch",
+> ```
+
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
+    </picture>
+</p>
+
+<br>
+
 **Подключитесь к Entware по SSH под пользователем root и выполните следующие команды:**
 
 1. Выполните команду, чтобы скачать скрипт установки:
@@ -1092,17 +1106,6 @@ chmod +x install_xray.sh
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
       <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
-    </picture>
-</p>
-
-<br>
-
-> *После обновления Xray для корректной работы XKeen необходимо удалить файл **02_transport.json** из директории **opkg\etc\xray\configs** и добавить строку в верхнюю часть файла **05_routing.json**: `"domainStrategy": "IPIfNonMatch",`*
-
-<p align="left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
     </picture>
 </p>
 
