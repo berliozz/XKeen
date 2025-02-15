@@ -1111,6 +1111,67 @@ chmod +x install_xray.sh
 
 <br>
 
+<details>
+<summary>Обновление ядра XRAY до версии 25.1.1 для роутеров Keenetic Skipper 4G (KN-2910) и Keenetic 4G (KN-1212)</summary>
+
+<br>
+
+1. **Остановите Xkeen:**
+
+Выполните команду:
+```
+xkeen -stop
+```
+
+2. **Замените ядро вручную:**
+
+* Перейдите в каталог: `/opt/sbin/`.
+* Удалите старое ядро и [загрузите новое](https://github.com/Corvus-Malus/XKeen-docs/releases/download/25.1.1/xray) (скачайте актуальную версию ядра XRAY).
+* Убедитесь, что файл нового ядра имеет имя **xray**.
+
+3. **Сделайте файл исполняемым:**
+
+Выполните команду:
+```
+chmod +x /opt/sbin/xray
+```
+
+4. **Обновите конфигурацию:**
+
+* Удалите файл: **02_transport.json.**
+* Добавьте в конфигурацию роутинга **05_routing.json** следующую строку: 
+
+```
+"domainStrategy": "IPIfNonMatch",
+```
+
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
+    </picture>
+</p>
+
+<br>
+
+5. **Отключите автообновление ядра:**
+
+Выполните команду:
+```
+xkeen -dxc
+```
+
+6. **Запустите Xkeen:**
+
+Выполните команду:
+```
+xkeen -start
+```
+
+</details>
+
+<br>
+
 **Восстановление оригинального файла xray (*откат обновления*)**
 
 1. Выполните скрипт с параметром **recover**:
