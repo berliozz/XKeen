@@ -878,7 +878,7 @@ xkeen -start
 
 <br>
 
-> *При возникновении ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> [обновите ядро xray](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии)*
+> *В случае появления ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра Xray](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
 
 <br>
 
