@@ -876,6 +876,12 @@ xkeen -start
   </a>
 </p>
 
+<br>
+
+> *При возникновении ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> [обновите ядро xray](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии)*
+
+<br>
+
 ### [Прокси-серверы DNS-over-TLS и DNS-over-HTTPS для шифрования DNS-запросов](https://telegra.ph/DoT-DoH-08-12)
 
 **DNS-over-TLS**
