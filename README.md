@@ -19,6 +19,7 @@
 - [Исправление проблемы с быстрым обрывом соединений по SSH](#исправление-проблемы-с-быстрым-обрывом-соединений-по-ssh)
 - [Исправление проблемы с SSH доступом на Keenetic после установки Entware](#исправление-проблемы-с-ssh-доступом-на-keenetic-после-установки-entware)
 - [Обновление ядра XRAY до последней версии](#обновление-ядра-xray-до-последней-версии)
+- [Исправление ошибки «panic: runtime error: slice bounds out of range»](#обновление-ядра-xray-до-последней-версии)
 - [Бинарный файл xray для KN-2910 и KN-1212](#используйте-этот-бинарный-файл-xray-если-у-вас-kn-2910-или-kn-1212)
 - [Настройка BBR через 3X-UI Panel Management Script](#настройка-bbr-через-3x-ui-panel-management-script)
 - [Как отключить двухсторонний пинг в Linux](#как-отключить-двухсторонний-пинг-в-linux)
@@ -1077,6 +1078,10 @@ exec /opt/etc/init.d/S51dropbear restart
       <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
     </picture>
 </p>
+
+<br>
+
+>*Обновление ядра также помогает устранить ошибку <mark>«panic: runtime error: slice bounds out of range»</mark>*
 
 <br>
 
