@@ -1087,7 +1087,7 @@ exec /opt/etc/init.d/S51dropbear restart
 
 <br>
 
->*Обновление ядра также помогает устранить ошибку <mark>«panic: runtime error: slice bounds out of range»</mark>*
+> *В случае появления ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра Xray](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
 
 <br>
 
