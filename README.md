@@ -307,7 +307,7 @@ sudo $(brew --prefix e2fsprogs)/sbin/e2label /dev/disk14 OPKG
 
 Нажмите **Сохранить**.
 
-> *Если после сохранения в поле "**Сценарий initrc**" не появится путь `/opt/etc/init.d/rc.unslung`, введите его вручную в этом поле.*
+> *Сценарий **initrc** должен оставаться пустым. В процессе завершения установки он будет автоматически изменен на `/opt/etc/init.d/rc.unslung`.*
 
 <p align="center">
   <a href="http://192.168.1.1/opkg" target="_blank" rel="noopener noreferrer">
