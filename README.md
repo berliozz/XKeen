@@ -246,6 +246,9 @@ sudo $(brew --prefix e2fsprogs)/sbin/e2label /dev/disk14 OPKG
 - [x] Прокси-сервер DNS-over-HTTPS
 - [x] Протокол IPv6
 - [x] Модули ядра подсистемы Netfilter
+- [ ] Сервер SSH
+
+> *Перед установкой Entware убедитесь, что компонент прошивки Кинетика «**Сервер SSH**» не установлен. Если он установлен, удалите его, так как Entware использует собственный SSH-сервер.*
 
 <p align="center">
   <a href="http://192.168.1.1/system/components" target="_blank" rel="noopener noreferrer">
@@ -317,6 +320,8 @@ sudo $(brew --prefix e2fsprogs)/sbin/e2label /dev/disk14 OPKG
 
 7. Перейдите на страницу "Диагностика" и откройте Системный журнал роутера. В нем вы должны увидеть следующие записи при установке системы пакетов Entware:
 
+> I [Aug 26 16:21:42] ndm: <mark>Opkg::Manager: invalid initrc "/opt/etc/init.d/rc.unslung": no such file or directory, trying/opt/etc/init.d/.</mark>
+> 
 > I [Aug 26 16:21:43] ndm: Opkg::Manager: init script reset to default: /opt/etc/initrc.
 > 
 > I [Aug 26 16:21:44] installer: [**1/5**] Начало установки системы пакетов "Entware"...
