@@ -21,6 +21,7 @@
 - [Обновление ядра XRAY до последней версии](#обновление-ядра-xray-до-последней-версии)
 - [Исправление ошибки «panic: runtime error: slice bounds out of range»](#обновление-ядра-xray-до-последней-версии)
 - [Бинарный файл xray для KN-2910 и KN-1212](#используйте-этот-бинарный-файл-xray-если-у-вас-kn-2910-или-kn-1212)
+- [Резервное копирование для быстрого развертывания на новом носителе или восстановления на текущем](#Резервное-копирование-для-быстрого-развертывания-на-новом-носителе-или-восстановления-на-текущем)
 - [Настройка BBR через 3X-UI Panel Management Script](#настройка-bbr-через-3x-ui-panel-management-script)
 - [Как отключить двухсторонний пинг в Linux](#как-отключить-двухсторонний-пинг-в-linux)
 </details>
@@ -1204,6 +1205,57 @@ chmod 755 /opt/sbin/xray
 ```
 xkeen -start
 ```
+<br><br>
+
+### Резервное копирование для быстрого развертывания на новом носителе или восстановления на текущем
+
+Рассмотрим ситуацию, когда вы решили перенести все файлы на новый накопитель или создать полную резервную копию флешки с Entware и XKeen. Это позволит в любой момент развернуть готовую конфигурацию без необходимости повторной установки Entware и других компонентов (для вашей версии процессора).
+
+Подключаемся к роутеру по SSH и вводим команду:
+
+```
+tar cvzf /opt/entware_backup.tar.gz --exclude=/opt/entware_backup.tar.gz -C /opt .
+```
+
+<p align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup.png">
+    </picture>
+</p>
+
+> ***Обратите внимание**: Точка в конце команды обязательна, так как она указывает на текущую директорию.*
+ 
+<p align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup-2.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup-2.png">
+    </picture>
+</p>
+
+
+Переходим на текущий накопитель и копируем архив **entware_backup.tar.gz** (полный бэкап вашей флешки) в удобное для вас место, например, на рабочий стол.
+
+<p align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup-3.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/entware-backup-3.png">
+    </picture>
+</p>
+
+
+Теперь, чтобы развернуть архив на новом накопителе (или восстановить его на старом из-за возникших проблем *(не забыв отформатировать)*), достаточно создать в корне флешки папку **install** и поместить в неё файл **entware_backup.tar.gz**. 
+
+Затем в **OPKG** (через админ-панель роутера) выберите нужный накопитель. В поле сценария **initrc** оставьте прежний путь:
+
+```
+/opt/etc/init.d/rc.unslung
+```
+
+Нажмите "**Сохранить**" и подождите одну-две минуты.
+
+Ваш бэкап полностью развернут со всеми настройками.
+
 <br><br>
 
 ### Настройка BBR через 3X-UI Panel Management Script
