@@ -883,7 +883,85 @@ xkeen -start
 
 <br>
 
-> *В случае возникновения ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или других неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере до версии **25.1.30 или выше**. По умолчанию XKeen устанавливает ядро Xray версии **1.8.4**, которое может быть причиной проблем. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
+### Обновление ядра XRAY до последней версии
+
+**Подключитесь к Entware по SSH под пользователем root и выполните следующие команды:**
+
+1. Выполните команду, чтобы скачать скрипт установки:
+
+```sh
+curl -s -S -L -O https://github.com/Corvus-Malus/XKeen-docs/raw/main/Installer/install_xray.sh
+```
+
+2. Сделайте скрипт исполняемым:
+
+```sh
+chmod +x install_xray.sh
+```
+
+3. Выполните скрипт с параметром **install** для обновления:
+
+```sh
+./install_xray.sh update
+```
+
+<br>
+
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
+    </picture>
+</p>
+
+<br>
+
+<details>
+<summary>Обновление ядра XRAY до версии 25.1.1 для роутеров Keenetic Skipper 4G (KN-2910) и Keenetic 4G (KN-1212)</summary>
+
+<br>
+
+1. **Остановите Xkeen:**
+
+Выполните команду:
+```
+xkeen -stop
+```
+
+2. **Замените ядро вручную:**
+
+* Перейдите в каталог: `/opt/sbin/`.
+* Удалите старое ядро и [загрузите новое](https://github.com/Corvus-Malus/XKeen-docs/releases/download/25.1.1/xray) (скачайте актуальную версию ядра XRAY).
+* Убедитесь, что файл нового ядра имеет имя **xray**.
+
+3. **Сделайте файл исполняемым:**
+
+Выполните команду:
+```
+chmod +x /opt/sbin/xray
+```
+
+4. **Удалите файл 02_transport.json**
+
+Перейдите в директорию `\etc\xray\configs` и удалите файл: **02_transport.json.**
+
+<br>
+
+5. **Отключите автообновление ядра:**
+
+Выполните команду:
+```
+xkeen -dxc
+```
+
+6. **Запустите Xkeen:**
+
+Выполните команду:
+```
+xkeen -start
+```
+
+</details>
 
 <br>
 
@@ -1076,138 +1154,23 @@ exec /opt/etc/init.d/S51dropbear restart
 
 <br><br>
 
-### Обновление ядра XRAY до последней версии
+**Обновление ядра XRAY до последней версии**
 
-> *Перед обновлением Xray для обеспечения корректной работы XKeen необходимо удалить файл **02_transport.json** из директории **opkg\etc\xray\configs**. Обратите внимание, что в новой версии этот файл больше не используется, поэтому возвращать его не нужно. После этого добавьте в верхнюю часть файла **05_routing.json** следующую строку:*
-> ```
-> "domainStrategy": "IPIfNonMatch",
-> ```
 
-<p align="left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-    </picture>
-</p>
+> *В случае возникновения ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или других неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере до версии **25.1.30 или выше**. По умолчанию XKeen устанавливает ядро Xray версии **1.8.4**, которое может быть причиной проблем. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
 
-<br>
-
-> *В случае появления ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра Xray](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
-
-<br>
-
-**Подключитесь к Entware по SSH под пользователем root и выполните следующие команды:**
-
-1. Выполните команду, чтобы скачать скрипт установки:
-
-```sh
-curl -s -S -L -O https://github.com/Corvus-Malus/XKeen-docs/raw/main/Installer/install_xray.sh
-```
-
-2. Сделайте скрипт исполняемым:
-
-```sh
-chmod +x install_xray.sh
-```
-
-3. Выполните скрипт с параметром **install** для обновления:
-
-```sh
-./install_xray.sh update
-```
-
-<br>
-
-<p align="left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/install-xray.png">
-    </picture>
-</p>
-
-<br>
-
-<details>
-<summary>Обновление ядра XRAY до версии 25.1.1 для роутеров Keenetic Skipper 4G (KN-2910) и Keenetic 4G (KN-1212)</summary>
-
-<br>
-
-1. **Остановите Xkeen:**
-
-Выполните команду:
-```
-xkeen -stop
-```
-
-2. **Замените ядро вручную:**
-
-* Перейдите в каталог: `/opt/sbin/`.
-* Удалите старое ядро и [загрузите новое](https://github.com/Corvus-Malus/XKeen-docs/releases/download/25.1.1/xray) (скачайте актуальную версию ядра XRAY).
-* Убедитесь, что файл нового ядра имеет имя **xray**.
-
-3. **Сделайте файл исполняемым:**
-
-Выполните команду:
-```
-chmod +x /opt/sbin/xray
-```
-
-4. **Обновите конфигурацию:**
-
-* Удалите файл: **02_transport.json.**
-* Добавьте в конфигурацию роутинга **05_routing.json** следующую строку: 
-
-```
-"domainStrategy": "IPIfNonMatch",
-```
-
-<p align="left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-    </picture>
-</p>
-
-<br>
-
-5. **Отключите автообновление ядра:**
-
-Выполните команду:
-```
-xkeen -dxc
-```
-
-6. **Запустите Xkeen:**
-
-Выполните команду:
-```
-xkeen -start
-```
-
-</details>
-
-<br>
-
-**Восстановление оригинального файла xray (*откат обновления*)**
-
-1. Выполните скрипт с параметром **recover**:
-
-```sh
-./install_xray.sh recover
-```
-
-<br>
 
 **Команды**
 
 `./install_xray.sh {command}`
 
-* `update|-u [version]` - Обновить Xray. Если версия не указана, будет выполнено обновление до последней доступной версии.
+* `update|-u`           - Обновить Xray до последней версии. 
+* `без команды`         - Вывести список последних 10 релизов Xray для выбора.
 * `recover|-r`          - Восстановить Xray из резервной копии.
-* `help|-h `            - Показать это сообщение.
 * `task HH:MM day`      - Запланировать обновление Xray. Если day = 8, то задание будет выполнено ежедневно.
 * `task 0`              - Удалить запланированное обновление.
 * `crontab -l`          - Расписание crontab
+* `help|-h `            - Показать это сообщение.
 
 <br><br>
 
