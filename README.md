@@ -900,7 +900,7 @@ curl -s -S -L -O https://github.com/Corvus-Malus/XKeen-docs/raw/main/Installer/i
 chmod +x install_xray.sh
 ```
 
-3. Выполните скрипт с параметром **install** для обновления:
+3. Выполните скрипт с параметром **update** для обновления до последней версии:
 
 ```sh
 ./install_xray.sh update
