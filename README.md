@@ -1064,6 +1064,10 @@ END
 * Подключиться к Entware по SSH под пользователем root.
 * Установить текстовый редактор nano:
 ```bash
+opkg update
+```
+
+```bash
 opkg install nano
 ```
 <br>
