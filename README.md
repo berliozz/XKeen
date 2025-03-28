@@ -919,15 +919,15 @@ chmod +x install_xray.sh
 
 > [!NOTE]
 > **Примечание:** *Если после обновления ядра Xray появилась ошибка, проверьте, удалил ли скрипт файл **02_transport.json**. Для этого перейдите в директорию `/etc/xray/configs` и удалите файл вручную, если он все еще присутствует.
-> Кроме того, убедитесь, что в файле **05_routing.json** (он находится в той же директории) есть строка:*
+> Кроме того, убедитесь, что в файле **03_inbounds.json** (он находится в той же директории) есть строка:*
 >```
-> "domainStrategy": "IPIfNonMatch",
+> "routeOnly": true,
 >```
 
 <p align="left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/routeOnly.jpg">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/routeOnly.jpg">
     </picture>
 </p>
 
