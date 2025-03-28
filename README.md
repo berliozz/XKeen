@@ -585,6 +585,16 @@ Cron запущен
 
 <br>
 
+Выполните команду для загрузки файла **geoip_zkeenip.dat**:
+```
+/opt/bin/curl -L -o /opt/etc/xray/dat/geoip_zkeenip.dat https://github.com/jameszeroX/zkeen-ip/releases/latest/download/zkeenip.dat
+```
+<p align="left">
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/zkeenip-dark.jpg">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/zkeenip-dark.jpg">
+    </picture>
+</p>
+
 # Предварительные настройки
 
 * Перейти в Web роутера *(стандартный адрес [192.168.1.1](http://192.168.1.1/policies/interface-priorities))*
