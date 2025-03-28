@@ -923,7 +923,7 @@ chmod +x install_xray.sh
 >```
 > "domainStrategy": "IPIfNonMatch"
 >```
->
+
 <p align="left">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/IPIfNonMatch.png">
