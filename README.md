@@ -960,16 +960,30 @@ chmod +x /opt/sbin/xray
 
 Перейдите в директорию `\etc\xray\configs` и удалите файл: **02_transport.json.**
 
-<br>
 
-5. **Отключите автообновление ядра:**
+5. **Добавить routeOnly в 03_inbounds.json**
+
+Откройте файл **03_inbounds.json**, который находится в директории `\etc\xray\configs`, и убедитесь, что в нем присутствует следующая строка:
+
+```
+"routeOnly": true,
+```
+
+<p align="left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/routeOnly.jpg">
+      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/routeOnly.jpg">
+    </picture>
+</p>
+
+6. **Отключите автообновление ядра:**
 
 Выполните команду:
 ```
 xkeen -dxc
 ```
 
-6. **Запустите Xkeen:**
+7. **Запустите Xkeen:**
 
 Выполните команду:
 ```
