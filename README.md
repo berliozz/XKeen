@@ -1527,6 +1527,7 @@ sudo sysctl -p
 
 Автор XKeen [@Skrill_zerro](https://t.me/Skrill_zerro)
 
+---
 
 ### Купить кофе автору
 
