@@ -846,9 +846,12 @@ system configuration save
 
 **05_routing.json** - `/etc/xray/configs/05_routing.json`
 
+> *Конфигуратор правил маршрутизации для xKeen: [XKeen Routing Generator](https://xray-routing-generator.netlify.app/)*
+
 <p align="center">
   <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/05-routing-Dark.png" alt="Example Image" width="400"/>
 </p>
+
 
 <p align="center">
 <b>Примечание</b>: Способы с GeoIP / GeoSite — в некотором смысле автоматические.
