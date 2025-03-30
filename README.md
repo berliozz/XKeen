@@ -439,7 +439,7 @@ opkg install curl
 ```
 
 ```bash
-curl -sOfL https://raw.githubusercontent.com/Skrill0/XKeen/main/install.sh
+curl -sOfL https://raw.githubusercontent.com/jameszeroX/XKeen/main/install.sh
 ```
 
 ```bash
@@ -585,15 +585,6 @@ Cron запущен
 
 <br>
 
-Выполните команду для загрузки файла **geoip_zkeenip.dat**:
-```
-/opt/bin/curl -L -o /opt/etc/xray/dat/geoip_zkeenip.dat https://github.com/jameszeroX/zkeen-ip/releases/latest/download/zkeenip.dat
-```
-<p align="left">
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/zkeenip-dark.jpg">
-      <img src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/zkeenip-dark.jpg">
-    </picture>
-</p>
 
 # Предварительные настройки
 
@@ -894,6 +885,101 @@ xkeen -start
 
 <br>
 
+
+### [Прокси-серверы DNS-over-TLS и DNS-over-HTTPS для шифрования DNS-запросов](https://telegra.ph/DoT-DoH-08-12)
+
+**DNS-over-TLS**
+* Quad9 DoT: ~~`9.9.9.9` `dns.quad9.net`; `149.112.112.112` `dns.quad9.net`~~ *(Много жалоб — не у всех работают эти DNS)*
+* CloudFlare DoT: `1.1.1.1` `cloudflare-dns.com`; `1.0.0.1` `cloudflare-dns.com`
+* Google DoT: `8.8.8.8` `dns.google`; `8.8.4.4` `dns.google`
+* AdGuard DoT: `94.140.14.14` `dns.adguard-dns.com`; `94.140.15.15` `dns.adguard-dns.com`
+* Cisco Umbrella DoT: `208.67.222.222` `dns.opendns.com`; `208.67.220.220` `dns.opendns.com`
+
+**DNS-over-HTTPS**
+* Quad9 DoH: ~~`https://dns.quad9.net/dns-query`~~ *(Много жалоб — не у всех работают эти DNS)*
+* CloudFlare DoH: `https://cloudflare-dns.com/dns-query`; `https://one.one.one.one/dns-query`
+* Google DoH: `https://dns.google/dns-query`
+* AdGuard DoH: `https://dns.adguard-dns.com/dns-query`
+* Cisco Umbrella DoH: `https://doh.opendns.com/dns-query`
+
+<p align="center">
+  <a href="http://192.168.1.1/internet-filter/dns-configuration" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Keenetic-dns-configuration-Dark.png">
+      <img width="100%" height="100%" src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Keenetic-dns-configuration-Light.png">
+    </picture>
+  </a>
+</p>
+
+### Отключить DNS интернет-провайдера
+- [x] Игнорировать DNSv4 интернет-провайдера
+- [x] Игнорировать DNSv6 интернет-провайдера
+
+<p align="center">
+  <a href="http://192.168.1.1/wired/GigabitEthernet1" target="_blank" rel="noopener noreferrer">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Keenetic-GigabitEthernet-Dark.png">
+      <img width="100%" height="100%" src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Keenetic-GigabitEthernet1-Light.png">
+    </picture>
+  </a>
+</p>
+
+<br>
+
+> **Рекомендация**: *Xray в роутере обрабатывает абсолютно весь трафик. В зависимости от настроек маршрутизации, часть трафика отправляется напрямую через провайдера, а другая — через прокси (например, через VPS). Однако, слабый процессор роутера может не справляться с обработкой большого объема транзитного трафика через Xray, что приводит к нагрузке и снижению производительности. К сожалению, полностью исправить эту проблему невозможно из-за аппаратных ограничений роутера.*
+>
+> *Тем не менее, можно уменьшить нагрузку на процессор, ограничив работу Xkeen портами 443 (HTTPS) и 80 (HTTP), что улучшит производительность при передаче трафика и снизит вероятность лагов и обрывов.*
+>
+> **Для этого нужно подключиться к Entware по SSH под пользователем root и выполнить команду:**
+>
+> ```bash
+> xkeen -ap 443,80
+> ```
+>
+> *Эта настройка поможет сделать сеть более стабильной и повысить её общую производительность.*
+
+<br>
+
+> **Примечание**: *Если вам всё-таки важны результаты замеров скорости, то для достоверного результата необходимо соблюдать, как минимум, два условия:
+— не ограничивать порты проксирования 80 и 443;
+— не использовать роутинг (временно удалить routing.json и перезапустить xkeen).*
+
+<br>
+
+### [FAQ по XKeen от jameszero](https://jameszero.net/faq-xkeen.htm)
+
+> *FAQ по XKeen (в процессе наполнения) предназначен для тех, у кого возникли дополнительные вопросы после внимательного прочтения инструкции к XKeen*
+
+<p align="center">
+END
+</p>
+
+---
+
+<br>
+
+# Опциональные настройки
+
+### Удаление компонентов IPv6 и Netfilter
+
+> *Если установленные компоненты **IPv6** и **Netfilter** вам не нужны и были установлены только для **XKeen**, вы можете их удалить, выполнив следующие шаги:*
+
+* Подключиться к Entware по SSH под root
+* Выполнить команду: **`xkeen -modules`**
+* Перейти в Web роутера (стандартный адрес [192.168.1.1](http://192.168.1.1/system/components))
+* Перейти в раздел **`Параметры системы > Изменить набор компонентов`**
+* Снять отметки для удаления
+1. **Протокол IPv6**
+2. **Модули ядра подсистемы Netfilter**
+
+<br><br>
+
+### Ошибка runtime error: slice bounds out of range
+
+> *В случае возникновения ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или других неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере до версии **25.1.30 или выше**. По умолчанию XKeen устанавливает ядро Xray версии **1.8.4**, которое может быть причиной проблем. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
+
+<br><br>
+
 ### Обновление ядра XRAY до последней версии
 
 **Подключитесь к Entware по SSH под пользователем root и выполните следующие команды:**
@@ -1017,95 +1103,8 @@ xkeen -start
 
 </details>
 
-<br>
-
-### [Прокси-серверы DNS-over-TLS и DNS-over-HTTPS для шифрования DNS-запросов](https://telegra.ph/DoT-DoH-08-12)
-
-**DNS-over-TLS**
-* Quad9 DoT: ~~`9.9.9.9` `dns.quad9.net`; `149.112.112.112` `dns.quad9.net`~~ *(Много жалоб — не у всех работают эти DNS)*
-* CloudFlare DoT: `1.1.1.1` `cloudflare-dns.com`; `1.0.0.1` `cloudflare-dns.com`
-* Google DoT: `8.8.8.8` `dns.google`; `8.8.4.4` `dns.google`
-* AdGuard DoT: `94.140.14.14` `dns.adguard-dns.com`; `94.140.15.15` `dns.adguard-dns.com`
-* Cisco Umbrella DoT: `208.67.222.222` `dns.opendns.com`; `208.67.220.220` `dns.opendns.com`
-
-**DNS-over-HTTPS**
-* Quad9 DoH: ~~`https://dns.quad9.net/dns-query`~~ *(Много жалоб — не у всех работают эти DNS)*
-* CloudFlare DoH: `https://cloudflare-dns.com/dns-query`; `https://one.one.one.one/dns-query`
-* Google DoH: `https://dns.google/dns-query`
-* AdGuard DoH: `https://dns.adguard-dns.com/dns-query`
-* Cisco Umbrella DoH: `https://doh.opendns.com/dns-query`
-
-<p align="center">
-  <a href="http://192.168.1.1/internet-filter/dns-configuration" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Keenetic-dns-configuration-Dark.png">
-      <img width="100%" height="100%" src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Keenetic-dns-configuration-Light.png">
-    </picture>
-  </a>
-</p>
-
-### Отключить DNS интернет-провайдера
-- [x] Игнорировать DNSv4 интернет-провайдера
-- [x] Игнорировать DNSv6 интернет-провайдера
-
-<p align="center">
-  <a href="http://192.168.1.1/wired/GigabitEthernet1" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Keenetic-GigabitEthernet-Dark.png">
-      <img width="100%" height="100%" src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Keenetic-GigabitEthernet1-Light.png">
-    </picture>
-  </a>
-</p>
-
-<br>
-
-> **Рекомендация**: *Xray в роутере обрабатывает абсолютно весь трафик. В зависимости от настроек маршрутизации, часть трафика отправляется напрямую через провайдера, а другая — через прокси (например, через VPS). Однако, слабый процессор роутера может не справляться с обработкой большого объема транзитного трафика через Xray, что приводит к нагрузке и снижению производительности. К сожалению, полностью исправить эту проблему невозможно из-за аппаратных ограничений роутера.*
->
-> *Тем не менее, можно уменьшить нагрузку на процессор, ограничив работу Xkeen портами 443 (HTTPS) и 80 (HTTP), что улучшит производительность при передаче трафика и снизит вероятность лагов и обрывов.*
->
-> **Для этого нужно подключиться к Entware по SSH под пользователем root и выполнить команду:**
->
-> ```bash
-> xkeen -ap 443,80
-> ```
->
-> *Эта настройка поможет сделать сеть более стабильной и повысить её общую производительность.*
-
-<br>
-
-> **Примечание**: *Если вам всё-таки важны результаты замеров скорости, то для достоверного результата необходимо соблюдать, как минимум, два условия:
-— не ограничивать порты проксирования 80 и 443;
-— не использовать роутинг (временно удалить routing.json и перезапустить xkeen).*
-
-<br>
-
-### [FAQ по XKeen от jameszero](https://jameszero.net/faq-xkeen.htm)
-
-> *FAQ по XKeen (в процессе наполнения) предназначен для тех, у кого возникли дополнительные вопросы после внимательного прочтения инструкции к XKeen*
-
-<p align="center">
-END
-</p>
-
----
-
-<br>
-
-# Опциональные настройки
-
-### Удаление компонентов IPv6 и Netfilter
-
-> *Если установленные компоненты **IPv6** и **Netfilter** вам не нужны и были установлены только для **XKeen**, вы можете их удалить, выполнив следующие шаги:*
-
-* Подключиться к Entware по SSH под root
-* Выполнить команду: **`xkeen -modules`**
-* Перейти в Web роутера (стандартный адрес [192.168.1.1](http://192.168.1.1/system/components))
-* Перейти в раздел **`Параметры системы > Изменить набор компонентов`**
-* Снять отметки для удаления
-1. **Протокол IPv6**
-2. **Модули ядра подсистемы Netfilter**
-
 <br><br>
+
 
 ### Настройка автоматического обновления файлов geosite_zkeen.dat и geoip_zkeenip.dat
 
@@ -1212,11 +1211,6 @@ exec /opt/etc/init.d/S51dropbear restart
 
 <br><br>
 
-### Ошибка runtime error: slice bounds out of range
-
-> *В случае возникновения ошибки <mark>«panic: runtime error: slice bounds out of range»</mark> или других неожиданных сбоев в работе Xray, рекомендуется выполнить [обновление ядра](https://github.com/Corvus-Malus/XKeen?tab=readme-ov-file#обновление-ядра-xray-до-последней-версии) на роутере до версии **25.1.30 или выше**. По умолчанию XKeen устанавливает ядро Xray версии **1.8.4**, которое может быть причиной проблем. Данная мера часто позволяет устранить ошибки и восстановить корректную работу системы.*
-
-<br><br>
 
 ### [Возможные решения проблем с доступом к ChatGPT и другим сайтам](https://telegra.ph/QUIC-Enabled---Disabled-08-26)
 
