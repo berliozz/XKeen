@@ -1570,7 +1570,7 @@ UQDHmmyz0e1K07Wf7aTVtdmcGzCPfo4Pf7uBi_Id8TDI6Da6
 30% с каждого поступления отправляется на поддержку автора ядра Xray.
 
 * Тинькофф
-* 
+
 [Прямая ссылка](https://www.tinkoff.ru/rm/krasilnikova.alina18/G4Z9433893)
 
 Номер карты
