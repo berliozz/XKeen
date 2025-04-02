@@ -1,3 +1,5 @@
+*XKeen обновлён до версии 1.1.3.2 (02.04.2025) — [форк от JamesZero](https://github.com/jameszeroX/XKeen).*
+
 * [Руководство по установке 3X-UI: Часть 1](https://telegra.ph/Ne-wireguardom-edinym-08-29)
 * [Руководство по установке 3X-UI: Часть 2](https://telegra.ph/Nastrojka-3xui-part-2-09-21)
 
