@@ -246,6 +246,9 @@ sudo $(brew --prefix e2fsprogs)/sbin/e2label /dev/disk14 OPKG
 </p>
 
 Устройство отформатировано в Ext4 и готово к использованию.
+
+---
+
 </details>
 
 <br><br>
@@ -1132,6 +1135,8 @@ xkeen -dxc
 ```
 xkeen -start
 ```
+
+---
 
 </details>
 
