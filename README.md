@@ -706,7 +706,12 @@ system configuration save
 
 Нас интересуют только 3 файла: `03_inbounds.json`, `04_outbounds.json` и `05_routing.json`
 
-* **03_inbounds.json** *(Mixed)*: https://github.com/Corvus-Malus/XKeen/releases/latest/download/03_inbounds.json
+* **03_inbounds.json** *(режим работы **Mixed***): https://github.com/Corvus-Malus/XKeen/releases/latest/download/03_inbounds.json
+
+>* *[Mixed](https://github.com/Corvus-Malus/XKeen/releases/latest/download/03_inbounds.json) — поддерживает UDP и TCP, сочетая преимущества режимов TProxy и Redirect. UDP работает через TProxy, а TCP — через Redirect, обеспечивая баланс между скоростью и производительностью.*
+>* *[TProxy](https://github.com/Corvus-Malus/XKeen/releases/latest/download/03_inbounds_tproxy.json) — поддерживает UDP и TCP, отлично работает со всеми типами трафика, включая игры и стриминговые сервисы. Однако этот режим более ресурсоёмкий и самый медленный. Не рекомендуется, так как есть Mixed.*
+>* *[Redirect](https://github.com/Corvus-Malus/XKeen/releases/latest/download/03_inbounds_redirect.json) — поддерживает только TCP. Это самый быстрый режим, но не подходит для проксирования стриминговых сервисов и игр.*
+>
 
 * **04_outbounds.json**: https://github.com/Corvus-Malus/XKeen/releases/latest/download/04_outbounds.json
 
