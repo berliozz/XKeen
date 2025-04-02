@@ -1567,6 +1567,8 @@ sudo sysctl -p
 
 ### Удаляем Xray | XKeen | Конфигурации | Резервные копии
 
+`xkeen -remove:` Полная деинсталляции XKeen
+
 `opkg remove xkeen`: Удаляем XKeen
 
 `opkg remove xray`: Удаляем Xray и его конфигурации
