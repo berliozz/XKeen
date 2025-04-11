@@ -1,19 +1,23 @@
-*XKeen обновлён до версии 1.1.3.2 (02.04.2025) — форк от [JamesZero](https://github.com/jameszeroX).*
+*XKeen обновлён до версии 1.1.3.3 (11.04.2025) — форк от [JamesZero](https://github.com/jameszeroX).*
 
 <details>
 <summary>Список изменений:</summary>
 
-- XKeen устанавливает крайнюю версию xray-core и обновляет её при необходимости (ранее устанавливалась зафиксированная версия 1.8.4)
+- XKeen устанавливает крайнюю версию xray-core и проверяет обновления по расписанию (ранее устанавливалась зафиксированная версия 1.8.4)
 - Исправлено добавление портов в исключения (ранее команду `xkeen -ape` нужно было прерывать по ctrl+c)
 - Исправлена совместная работа режима TProxy и socks5 (ранее Xkeen запускался в Mixed режиме, что приводило к неработоспособности)
-- Корректная деинсталляция xray-core (ранее пакет xray-core не удалялся при деинсталляции)
-- Косметические правки скриптов установки и удаления XKeen
+- Исправлен автозапуск XKeen при старте роутера (ранее XKeen иногда запускался для всего устройства, а не только для своей политики - [FAQ п.12](https://jameszero.net/faq-xkeen.htm#12)
+- Объединены задачи планировщика по обновлению GeoSite и GeoIP. В связи с этим упразднены параметры командной строки: `-ugs`, `-ugi`, `-ugsc`, `-ugic`, `-dgsc`, `-dgic`
+- Корректная деинсталляция xray-core (ранее пакет xray не удалялся при деинсталляции)
+- Справка (`xkeen -h`) выровнена по табуляции и повышен контраст текста
+- Косметические и функциональные правки скриптов
 - Актуализация конфигурационных файлов xray-core
 
 Добавлено:
 - Возможность установки GeoIP базы zkeenip.dat
 - Обновление [zkeen.dat](https://github.com/jameszeroX/zkeen-domains) и [zkeenip.dat](https://github.com/jameszeroX/zkeen-ip) по расписанию средствами XKeen
-- Ключ командной строки `-remove` для полной деинсталляции XKeen (ранее деинсталляцию нужно было выполнять покомпонентно)
+- Параметр командной строки `-remove` для полной деинсталляции XKeen (ранее деинсталляцию нужно было выполнять покомпонентно)
+- Параметры командной строки: `-ug` (обновление геофайлов), `-ugc` (управление заданием Cron, обновляющим геофайлы), `-dgc` (удаление задания Cron, обновляющего геофайлы)
 
 Удалено:
 - Возможность установки GeoSite Antizapret (база повреждена в репозитории)
@@ -481,6 +485,29 @@ chmod +x ./install.sh
 ```bash
 ./install.sh
 ```
+
+<details>
+<summary>Альтернативный вариант установки</summary>
+  
+> Выполнять от пользователя root
+
+```bash
+opkg install ca-certificates wget-ssl tar
+```
+
+```bash
+wget "https://cdn.jsdelivr.net/gh/jameszeroX/XKeen@main/xkeen.tar" && tar -xvf xkeen.tar -C /opt/sbin --overwrite > /dev/null && rm xkeen.tar
+```
+
+```bash
+cd /opt/sbin/_xkeen
+```
+
+```bash
+xkeen -i
+```
+
+</details>
 
 <p align="left">
   <a href="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Putty-4-Dark.png" target="_blank" rel="noopener noreferrer">
