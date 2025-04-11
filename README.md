@@ -1631,11 +1631,11 @@ sudo sysctl -p
 
 **Купить кофе jameszero**
 
-- Монета USDT, сеть TRC20:
+* Монета USDT, сеть TRC20:
 ```
 TB9dLwzNdLB6QeKV6w4FjCACSarePb32Dg
 ```
-- Монета USDT, сеть TON:
+* Монета USDT, сеть TON:
 ```
 UQDHmmyz0e1K07Wf7aTVtdmcGzCPfo4Pf7uBi_Id8TDI6Da6
 ```
@@ -1671,15 +1671,14 @@ UQDHmmyz0e1K07Wf7aTVtdmcGzCPfo4Pf7uBi_Id8TDI6Da6
 
 [DonationAlerts](https://www.donationalerts.com/r/skrill0)
 
-* Криптовалюта
 
-Монета USDT, сеть TRC20:
+* Монета USDT, сеть TRC20:
 
 ```
 TSC6Emx5KHK4CpYFKWj7duSYboKRAVxS3M
 ```
 
-Монета USDT, сеть ERC20 и BEP20:
+* Монета USDT, сеть ERC20 и BEP20:
 
 ```
 0x4a0369a762e3a23cc08f0bbbf39e169a647a5661
