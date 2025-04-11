@@ -1617,7 +1617,7 @@ sudo sysctl -p
 Ситуация такова, что его труд и время даже минимально не окупаются. 
 Все вознаграждения получают именно авторы панелей/клиентов.
 
-Монеты ETH/USDT/USDC
+- Монеты ETH/USDT/USDC:
 
 ```
 0xDc3Fe44F0f25D13CACb1C4896CD0D321df3146Ee
@@ -1673,13 +1673,13 @@ UQDHmmyz0e1K07Wf7aTVtdmcGzCPfo4Pf7uBi_Id8TDI6Da6
 
 * Криптовалюта
 
-Монета USDT, сеть TRC20
+Монета USDT, сеть TRC20:
 
 ```
 TSC6Emx5KHK4CpYFKWj7duSYboKRAVxS3M
 ```
 
-Монета USDT, сеть ERC20 и BEP20
+Монета USDT, сеть ERC20 и BEP20:
 
 ```
 0x4a0369a762e3a23cc08f0bbbf39e169a647a5661
