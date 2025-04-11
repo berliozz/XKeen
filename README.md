@@ -1609,7 +1609,7 @@ sudo sysctl -p
 
 ---
 
-### Купить кофе автору
+## Купить кофе автору
 
 **Купить кофе автору ядра [Xray](https://github.com/XTLS/Xray-core?tab=readme-ov-file#donation--nfts)**
 
