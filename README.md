@@ -951,19 +951,6 @@ xkeen -start
   </a>
 </p>
 
-### Отключить DNS интернет-провайдера
-- [x] Игнорировать DNSv4 интернет-провайдера
-- [x] Игнорировать DNSv6 интернет-провайдера
-
-<p align="center">
-  <a href="http://192.168.1.1/wired/GigabitEthernet1" target="_blank" rel="noopener noreferrer">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Dark/Keenetic-GigabitEthernet-Dark.png">
-      <img width="100%" height="100%" src="https://github.com/Corvus-Malus/XKeen-docs/raw/main/images/Light/Keenetic-GigabitEthernet1-Light.png">
-    </picture>
-  </a>
-</p>
-
 <br>
 
 > **Рекомендация**: *Xray в роутере обрабатывает абсолютно весь трафик. В зависимости от настроек маршрутизации, часть трафика отправляется напрямую через провайдера, а другая — через прокси (например, через VPS). Однако, слабый процессор роутера может не справляться с обработкой большого объема транзитного трафика через Xray, что приводит к нагрузке и снижению производительности. К сожалению, полностью исправить эту проблему невозможно из-за аппаратных ограничений роутера.*
