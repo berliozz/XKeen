@@ -450,10 +450,14 @@ passwd
 
 <br>
 
-10. При успешной авторизации вы окажетесь в оболочке BusyBox v1.27.2 () built-in shell (ash). Теперь нужно обновить opkg-пакет, для этого введите команду **opkg update** и **opkg upgrade**:
+10. При успешной авторизации вы окажетесь в оболочке BusyBox v1.27.2 () built-in shell (ash). Теперь нужно обновить opkg-пакет, для этого введите команду:
 
 ```bash
 opkg update
+```
+
+```bash
+opkg upgrade
 ```
 
 <p align="left">
